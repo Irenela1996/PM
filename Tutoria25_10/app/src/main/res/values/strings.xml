@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Tutoria25_10</string>
+    <string name="texto_inicial">Pulsa un botón</string>
+    <string name="texto1">Has pulsado el botón 1</string>
+    <string name="texto2">Has pulsado el botón 2</string>
+    <string name="btn1">Botón 1</string>
+    <string name="btn2">Botón 2</string>
+    <string name="btn3">Ir a SegundoActivity</string>
+    <string name="btn4">Muestra un snackbar</string>
+    <string name="btn5">Volver a MainActivity</string>
+    <string name="titulo">Mi primer AlertDialog</string>
+    <string name="alert">¿Quieres ir a SegundoActivity?</string>
+    <string name="start">SÍ</string>
+    <string name="cancel">NO</string>
+</resources>

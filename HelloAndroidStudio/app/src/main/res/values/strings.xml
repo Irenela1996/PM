@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Hello Android Studio</string>
+    <string name="boton1">Pulsa en este botón</string>
+</resources>
