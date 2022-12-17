@@ -8,6 +8,11 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import com.example.colores.fragments.FragmentFav
+import com.example.colores.fragments.FragmentHome
+import com.example.colores.fragments.FragmentLocation
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -40,7 +45,7 @@ class MainActivity : AppCompatActivity() {
             val builder = AlertDialog.Builder(this)
             //le asignamos un título y el mensaje del tipo alert
             builder.setTitle(R.string.titulo).setMessage(R.string.alert)
-                    //le asignamos que es lo que queremos que pase en caso afirmativo
+                //le asignamos que es lo que queremos que pase en caso afirmativo
                 .setPositiveButton(R.string.start, DialogInterface.OnClickListener {
                     //Se lanza el activity si se pulsa SÍ
                     // este es el método que permite cambiar de activity
@@ -51,15 +56,15 @@ class MainActivity : AppCompatActivity() {
                     //Se lanza el activity si se pulsa NO
                         dialog, id ->
                     Toast.makeText(
-                        this,
-                        "Has cancelado el paso a SegundoActivity",
-                        Toast.LENGTH_LONG
+                        this, "Has cancelado el paso a SegundoActivity", Toast.LENGTH_LONG
                     ).show()
                 })
             //Creamos dicha variable
             builder.create()
             // La mostramos
             builder.show()
+
+
         }
         // Usando lambda
         btn1.setOnClickListener { tvTexto?.setText(R.string.texto1) }
@@ -71,6 +76,28 @@ class MainActivity : AppCompatActivity() {
         //btn1.setOnClickListener(this)
         //btn2.setOnClickListener(this)
 
+        //Para crear el menu Botton Navigation View
+        // Instanciamos el Botton Navigation Menu
+        val bnv = findViewById<BottomNavigationView>(R.id.botton_navigation_menu)
+
+
+        bnv.setOnItemSelectedListener({ item ->
+            when (item.itemId) {
+                R.id.page_1 -> {
+                    cargarFragments(FragmentHome())
+                    true
+                }
+                R.id.page_2 -> {
+                    cargarFragments(FragmentFav())
+                    true
+                }
+                R.id.page_3 -> {
+                    cargarFragments(FragmentLocation())
+                    true
+                }
+                else -> false
+            }
+        })
     }
 
 //     Una forma de actuar sobre los eventos:
@@ -88,4 +115,13 @@ class MainActivity : AppCompatActivity() {
 //        }
 //
 //    }
+
+    private fun cargarFragments(fragment: Fragment) {
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
+        //Coge el fragment que te estoy dando como parámetro y ponmelo en el framelayout
+        fragmentTransaction.add(R.id.frameLayout_main, fragment)
+        fragmentTransaction.commit()
+
+    }
+
 }

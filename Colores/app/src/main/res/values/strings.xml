@@ -21,4 +21,13 @@
     <string name="btn_fragment_uno">Fragment uno</string>
     <string name="fragment_dos">Hola desde el fragmento 2</string>
 
+    <string name="home">Home</string>
+    <string name="fav">Favorites</string>
+    <string name="location">Location</string>
+
+    <string name="fragment_home">Fragment Home</string>
+    <string name="fragment_fav">Fragment Favorites</string>
+    <string name="fragment_loc">Fragment Location</string>
+
+
 </resources>
