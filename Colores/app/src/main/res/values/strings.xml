@@ -8,11 +8,17 @@
     <string name="btn3">Ir a SegundoActivity</string>
     <string name="btn4">Muestra un snackbar</string>
     <string name="btn5">Volver a MainActivity</string>
+    <string name="btn6">Ir a Fragments</string>
     <string name="titulo">Mi primer AlertDialog</string>
     <string name="alert">¿Quieres ir a SegundoActivity?</string>
     <string name="start">SÍ</string>
     <string name="cancel">NO</string>
 
-    <string name="tv_titulo">Titulo Main Fragmentos</string>
-    <string name="btn_text">Cambiar Fragmento</string>
+
+    <string name="tv_Titulo_Fragments">Fragmentos</string>
+    <string name="btn_cambiar_Fragments">Cambiar Fragments</string>
+    <string name="fragment_uno">Hola desde el fragmento 1</string>
+    <string name="btn_fragment_uno">Fragment uno</string>
+    <string name="fragment_dos">Hola desde el fragmento 2</string>
+
 </resources>
