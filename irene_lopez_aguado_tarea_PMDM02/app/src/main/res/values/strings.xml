@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">HOTEL ILA</string>
+    log_titulo
+    <string name="log_titulo">LOGIN</string>
+    <string name="log_usuario">Usuario</string>
+    <string name="log_password">Contraseña</string>
+    <string name="log_btn_entrar">Entrar</string>
+</resources>
