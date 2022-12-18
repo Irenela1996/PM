@@ -5,4 +5,18 @@
     <string name="log_usuario">Usuario</string>
     <string name="log_password">Contraseña</string>
     <string name="log_btn_entrar">Entrar</string>
+    <!--    Nombre que recibe la BBDD de SharePrefs    -->
+    <string name="log_preference_file_key">Usuarios</string>
+    <!--    Nombre que recibe cada uno de los elementos de la BBDD de SharePrefs   -->
+    <string name="log_key">Usuarios</string>
+    <string name="botton_navigation_menu">Menu de navegación de Main</string>
+
+    <string name="bnm_Perfil">Perfil</string>
+    <string name="bnm_Reservas">Reservas</string>
+    <string name="bnm_MisActividades">Mis Actividades</string>
+
+    <string name="fp_nombre">Nombre</string>
+    <string name="fp_apellidos">Apellidos</string>
+    <string name="fp_fecha_de_entrada">Fecha de Entrada</string>
+    <string name="fp_fecha_de_salida">Fecha de Salida</string>
 </resources>

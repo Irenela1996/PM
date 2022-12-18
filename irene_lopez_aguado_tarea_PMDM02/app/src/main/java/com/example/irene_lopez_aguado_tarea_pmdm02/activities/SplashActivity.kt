@@ -1,4 +1,4 @@
-package com.example.irene_lopez_aguado_tarea_pmdm02
+package com.example.irene_lopez_aguado_tarea_pmdm02.activities
 
 import android.content.Intent
 import android.os.Build
@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.annotation.RequiresApi
+import com.example.irene_lopez_aguado_tarea_pmdm02.R
 
 class SplashActivity : AppCompatActivity() {
 
@@ -15,6 +16,12 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_splash)
+
+        //Comprobamos que haya un nombre del usuario almacenado en SharedPreferences
+        // eso significa que ya hay una persona loggeada y no hace falta mostrar todo
+        // el rato el splashactivity
+
+
 
         Handler(Looper.getMainLooper()).postDelayed({
 
