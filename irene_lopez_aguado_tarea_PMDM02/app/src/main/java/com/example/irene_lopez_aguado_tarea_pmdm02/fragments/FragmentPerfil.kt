@@ -39,11 +39,11 @@ class FragmentPerfil : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_perfil, container, false)
 
-        var usuario: TextInputLayout = view.findViewById(R.id.tv_Nombre)
+        var usuario: TextInputLayout = view.findViewById(R.id.outlinedTF_Nombre)
         //Le asignamos la variable de usuarios
         val sharedPref = view.context.getSharedPreferences(getString(R.string.log_preference_file_key), Context.MODE_PRIVATE)
 
-    //Recuperamos el valor almacenado en LoginActivity
+        //Recuperamos el valor almacenado en LoginActivity
         //Como primer valor le asignamos la variable de usuario
         //como valor por defecto usa valor_por_defecto que es "user"
         val user = sharedPref.getString(getString(R.string.log_key), getString(R.string.log_key))

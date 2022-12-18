@@ -1,37 +1,63 @@
 package com.example.irene_lopez_aguado_tarea_pmdm02.activities
 
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import com.example.irene_lopez_aguado_tarea_pmdm02.R
+
 
 class SplashActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_splash)
 
         //Comprobamos que haya un nombre del usuario almacenado en SharedPreferences
         // eso significa que ya hay una persona loggeada y no hace falta mostrar todo
         // el rato el splashactivity
 
-
-
         Handler(Looper.getMainLooper()).postDelayed({
+            if (leerStringSharePreferences(
+                    getString(R.string.log_key),
+                    getString(R.string.log_usuario),
+                    ""
+                ).isNullOrEmpty()
+            ) {
+                val intent = Intent(
+                    this@SplashActivity, LoginActivity::class.java
+                )
+                startActivity(intent)
+            } else {
+                val intent = Intent(
+                    this@SplashActivity, MainActivity::class.java
 
-            val intent = Intent(this@SplashActivity,
-                LoginActivity::class.java)
+                )
+                startActivity(intent)
+            }
 
-            startActivity(intent)
 
             finish()
         }, 3000)
-
     }
+
+
+    protected fun leerStringSharePreferences(
+        archivo: String,
+        clave: String,
+        defaultValue: String
+    ): String? {
+        //Recuperamos la informacion del archivo de SharePreferences
+        val sharePref = applicationContext.getSharedPreferences(archivo, Context.MODE_PRIVATE)
+        // Cargamos un valor desde el fichero de SharePreferences
+        return sharePref.getString(clave, defaultValue)
+    }
+
+
 }

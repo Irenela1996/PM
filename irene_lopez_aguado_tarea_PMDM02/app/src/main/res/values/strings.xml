@@ -19,4 +19,7 @@
     <string name="fp_apellidos">Apellidos</string>
     <string name="fp_fecha_de_entrada">Fecha de Entrada</string>
     <string name="fp_fecha_de_salida">Fecha de Salida</string>
+
+    <string name="vi_actividad">Actividad</string>
+    <string name="vi_descripcion">Descripción de la actividad </string>
 </resources>

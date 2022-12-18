@@ -10,7 +10,7 @@
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf ="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -44,13 +44,17 @@
         android:layout_height="86dp"
         android:background="#673AB7"
         android:color="@color/black"
+        android:foregroundTintMode="screen"
         android:isScrollContainer="false"
         app:itemIconTint="@color/white"
+        app:itemRippleColor="#3F51B5"
         app:itemTextColor="#FEFEFE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/botton_navigation_menu"></com.google.android.material.bottomnavigation.BottomNavigationView>
+        app:menu="@menu/botton_navigation_menu">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
