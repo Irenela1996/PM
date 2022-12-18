@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "272710726785",
+    "project_id": "irene-lopez-aguado-tarea-d0c3a",
+    "storage_bucket": "irene-lopez-aguado-tarea-d0c3a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:272710726785:android:ee632aa3c0eba41dccc980",
+        "android_client_info": {
+          "package_name": "com.example.irene_lopez_aguado_tarea_pmdm02"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "272710726785-q5mnhtt6hkaj11taitc56av7bfoon0rj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.irene_lopez_aguado_tarea_pmdm02",
+            "certificate_hash": "201e2aba3044cad41c1af693e3734c4db726b88a"
+          }
+        },
+        {
+          "client_id": "272710726785-i0ongkrepmbfbp5es5ihgj1cteed9t6a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcLp6ktWp8xPL8PqAI0sn88vP2_gPs4bI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "272710726785-i0ongkrepmbfbp5es5ihgj1cteed9t6a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

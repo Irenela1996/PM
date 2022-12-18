@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
             //Para crear el menu Botton Navigation View
             // Instanciamos el Botton Navigation Menu
             val bnv = findViewById(R.id.main_bottom_Navigation_View) as BottomNavigationView
+            cargarFragments(FragmentPerfil())
 
             bnv.setOnItemSelectedListener({ item ->
                 when (item.itemId) {

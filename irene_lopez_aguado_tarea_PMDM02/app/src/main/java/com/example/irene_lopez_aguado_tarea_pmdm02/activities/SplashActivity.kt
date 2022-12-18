@@ -1,6 +1,5 @@
 package com.example.irene_lopez_aguado_tarea_pmdm02.activities
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Build
@@ -24,12 +23,7 @@ class SplashActivity : AppCompatActivity() {
         // el rato el splashactivity
 
         Handler(Looper.getMainLooper()).postDelayed({
-            if (leerStringSharePreferences(
-                    getString(R.string.log_key),
-                    getString(R.string.log_usuario),
-                    ""
-                ).isNullOrEmpty()
-            ) {
+            if (!is_null_or_empty(getString(R.string.log_key),getString(R.string.log_usuario),"")) {
                 val intent = Intent(
                     this@SplashActivity, LoginActivity::class.java
                 )
@@ -37,16 +31,20 @@ class SplashActivity : AppCompatActivity() {
             } else {
                 val intent = Intent(
                     this@SplashActivity, MainActivity::class.java
-
                 )
                 startActivity(intent)
             }
-
-
             finish()
         }, 3000)
     }
 
+    protected fun is_null_or_empty(nombreArchivoXml:String, nombreElementoDentroXml:String, elementoDefault:String) :Boolean {
+        return leerStringSharePreferences(
+            nombreArchivoXml,
+            nombreElementoDentroXml,
+            elementoDefault
+        ).isNullOrEmpty()
+    }
 
     protected fun leerStringSharePreferences(
         archivo: String,
