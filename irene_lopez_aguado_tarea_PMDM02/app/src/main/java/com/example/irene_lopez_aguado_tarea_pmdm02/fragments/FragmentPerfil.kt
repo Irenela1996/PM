@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.core.content.edit
 import com.example.irene_lopez_aguado_tarea_pmdm02.R
 import com.google.android.material.textfield.TextInputLayout
 
@@ -47,9 +49,20 @@ class FragmentPerfil : Fragment() {
         //Como primer valor le asignamos la variable de usuario
         //como valor por defecto usa valor_por_defecto que es "user"
         val user = sharedPref.getString(getString(R.string.log_key), getString(R.string.log_key))
+        val apellidos = sharedPref.getString(getString(R.string.log_key), getString(R.string.log_key))
 
         // Ya tengo el valor del nombre guardado en la variable user del fichero de "usuarios.xml"
         usuario.editText?.setText(user)
+
+        val btn_guardar = view.findViewById(R.id.btn_guardar) as Button
+
+        //si están vacios los campos nada
+        if(user.isNullOrEmpty() || apellidos.isNullOrEmpty()){
+
+        }else{
+
+        }
+
 
         //Devuelve esa vista con la información que ha rescatado
         return view
@@ -75,4 +88,5 @@ class FragmentPerfil : Fragment() {
                 }
             }
     }
+
 }

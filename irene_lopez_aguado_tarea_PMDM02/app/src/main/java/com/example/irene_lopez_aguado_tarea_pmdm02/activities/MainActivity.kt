@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         private fun cargarFragments(fragment: Fragment) {
             val fragmentTransaction = supportFragmentManager.beginTransaction()
             //Coge el fragment que te estoy dando como parámetro y ponmelo en el framelayout
-            fragmentTransaction.add(R.id.main_frameLayout, fragment)
+            fragmentTransaction.replace(R.id.main_frameLayout, fragment)
             fragmentTransaction.commit()
 
         }

@@ -2,13 +2,14 @@
     <string name="app_name">HOTEL ILA</string>
     log_titulo
     <string name="log_titulo">LOGIN</string>
+    <!--    Nombre que recibe cada uno de los elementos de la BBDD de SharePrefs   -->
     <string name="log_usuario">Usuario</string>
     <string name="log_password">Contraseña</string>
     <string name="log_btn_entrar">Entrar</string>
     <!--    Nombre que recibe la BBDD de SharePrefs    -->
-    <string name="log_preference_file_key">Usuarios</string>
-    <!--    Nombre que recibe cada uno de los elementos de la BBDD de SharePrefs   -->
     <string name="log_key">Usuarios</string>
+    <string name="perfil_guardar">Guardar</string>
+
     <string name="botton_navigation_menu">Menu de navegación de Main</string>
 
     <string name="bnm_Perfil">Perfil</string>
@@ -17,8 +18,10 @@
 
     <string name="fp_nombre">Nombre</string>
     <string name="fp_apellidos">Apellidos</string>
-    <string name="fp_fecha_de_entrada">Fecha de Entrada</string>
-    <string name="fp_fecha_de_salida">Fecha de Salida</string>
+    <string name="fp_fecha_de_entrada">Fecha de entrada</string>
+    <string name="fp_fecha_de_salida">Fecha de salida</string>
+    <string name="fp_fecha_de_entrada_hint">20/12/2022</string>
+    <string name="fp_fecha_de_salida_hint">20/12/2022</string>
 
     <string name="vi_actividad">Actividad</string>
     <string name="vi_descripcion">Descripción de la actividad </string>

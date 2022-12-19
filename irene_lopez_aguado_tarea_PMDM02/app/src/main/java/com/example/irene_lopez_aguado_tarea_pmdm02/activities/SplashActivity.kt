@@ -23,7 +23,7 @@ class SplashActivity : AppCompatActivity() {
         // el rato el splashactivity
 
         Handler(Looper.getMainLooper()).postDelayed({
-            if (!is_null_or_empty(getString(R.string.log_key),getString(R.string.log_usuario),"")) {
+            if (is_null_or_empty(getString(R.string.log_key),getString(R.string.log_usuario),"")) {
                 val intent = Intent(
                     this@SplashActivity, LoginActivity::class.java
                 )
