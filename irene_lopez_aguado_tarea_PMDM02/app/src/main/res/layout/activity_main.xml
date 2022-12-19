@@ -44,7 +44,7 @@
         style="@style/ThemeOverlay.MaterialComponents.Toolbar.Primary"
         android:layout_width="413dp"
         android:layout_height="86dp"
-        android:background="@color/teal_700"
+        android:background="#FF5722"
         android:foregroundTintMode="screen"
         android:isScrollContainer="false"
         app:layout_constraintBottom_toBottomOf="parent"

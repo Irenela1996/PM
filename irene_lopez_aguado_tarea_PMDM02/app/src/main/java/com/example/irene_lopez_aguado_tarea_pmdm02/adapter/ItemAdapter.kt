@@ -9,11 +9,9 @@ import com.example.irene_lopez_aguado_tarea_pmdm02.R
 import com.example.irene_lopez_aguado_tarea_pmdm02.fragments.FragmentMisActividades
 import com.example.irene_lopez_aguado_tarea_pmdm02.fragments.FragmentReservas
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 
 
-class ItemAdapter(private val items: ArrayList<Item>, private val modo:String) :
+class ItemAdapter(private val items: ArrayList<Item>, private val modo: String) :
     RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
     private var selected = false
 
@@ -33,12 +31,12 @@ class ItemAdapter(private val items: ArrayList<Item>, private val modo:String) :
         boton.setOnClickListener(View.OnClickListener {
             val btn: FloatingActionButton = it as FloatingActionButton
 
-            if(modo.equals("reservas")){
-                selected=true
-                    btn.setImageResource(R.drawable.ic_close_24)
+            if (modo.equals("reservas")) {
+                selected = true
+                btn.setImageResource(R.drawable.ic_close_24)
                 FragmentReservas().addItem(item)
-            }else if(modo.equals("actividades")){
-                selected=true
+            } else if (modo.equals("actividades")) {
+                selected = true
                 btn.setImageResource(R.drawable.ic_close_24)
                 FragmentMisActividades().deleteItem(item)
             }

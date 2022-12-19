@@ -121,14 +121,4 @@ class FragmentPerfil : Fragment() {
         }
     }
 
-    protected fun leerStringSharePreferences(
-        archivo: String, clave: String
-    ): String? {
-        //Recuperamos la informacion del archivo de SharePreferences
-        val sharePref = this.context?.getSharedPreferences(archivo, Context.MODE_PRIVATE)
-        // Cargamos un valor desde el fichero de SharePreferences
-        return sharePref?.getString(clave, clave)
-    }
-
-
 }
