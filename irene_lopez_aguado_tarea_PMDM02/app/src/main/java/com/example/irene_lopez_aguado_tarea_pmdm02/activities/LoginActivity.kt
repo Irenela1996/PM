@@ -61,7 +61,7 @@ class LoginActivity : AppCompatActivity() {
                     val user = firebaseAuth.currentUser
                     Toast.makeText(baseContext, "Bienvenido a tu hotel!", Toast.LENGTH_SHORT).show()
                     //aquí vamos al MainActivity
-                    guardarEnsharedPref(getString(R.string.log_preference_file_key),getString(R.string.log_key))
+                    guardarEnsharedPref(getString(R.string.log_key))
                 }else{
                     val user = firebaseAuth.currentUser
                     Toast.makeText(baseContext, "Error de email y/o contraseña", Toast.LENGTH_SHORT).show()
@@ -74,14 +74,14 @@ class LoginActivity : AppCompatActivity() {
     //getString(R.string.log_key)
 
     
-    fun guardarEnsharedPref(nombre_archivo_xml:String, nombre_elemento_archivo_xml:String) {
+    fun guardarEnsharedPref(nombre_archivo_xml:String) {
         /*SHAREDPREFERENCES*/
         //Accedemos la fichero SharedPreferences
         val sharedPref = applicationContext.getSharedPreferences(nombre_archivo_xml, Context.MODE_PRIVATE)
 
         //Guardar un valor en el fichero de SharedPreferences por medio del editor de SharedPreferences
         with(sharedPref.edit()) {
-            putString(nombre_elemento_archivo_xml, user)
+            putString("Nombre", user)
             apply() //Escribe en el fichero de manera asíncrona (para no bloquear el hilo main)
         }
 

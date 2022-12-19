@@ -2,12 +2,13 @@ package com.example.irene_lopez_aguado_tarea_pmdm02.fragments
 
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import androidx.core.content.edit
+import android.widget.Toast
+import androidx.core.widget.doOnTextChanged
+import androidx.fragment.app.Fragment
 import com.example.irene_lopez_aguado_tarea_pmdm02.R
 import com.google.android.material.textfield.TextInputLayout
 
@@ -35,38 +36,70 @@ class FragmentPerfil : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_perfil, container, false)
+        var nombre: String = ""
+        var apellido: String = ""
 
-        var usuario: TextInputLayout = view.findViewById(R.id.outlinedTF_Nombre)
-        //Le asignamos la variable de usuarios
-        val sharedPref = view.context.getSharedPreferences(getString(R.string.log_preference_file_key), Context.MODE_PRIVATE)
+        //Cojo los valores de nombre y apellidos del usuario
+        var outlined_usuario: TextInputLayout = view.findViewById(R.id.outlinedTF_Nombre)
+        val input_usuario = outlined_usuario.editText?.text.toString()
+
+        var outlined_apellidos: TextInputLayout = view.findViewById(R.id.outlinedTF_apellidos)
+        val input_apellidos = outlined_apellidos.editText?.text.toString()
+
+        //Le asignamos la variable de usuarios.xml (el documento de SharedPreferences)
+        val sharedPref =
+            view.context.getSharedPreferences(getString(R.string.log_key), Context.MODE_PRIVATE)
 
         //Recuperamos el valor almacenado en LoginActivity
-        //Como primer valor le asignamos la variable de usuario
-        //como valor por defecto usa valor_por_defecto que es "user"
-        val user = sharedPref.getString(getString(R.string.log_key), getString(R.string.log_key))
-        val apellidos = sharedPref.getString(getString(R.string.log_key), getString(R.string.log_key))
+        //Como primer valor le asignamos la variable de email
+        val usuario_email = sharedPref.getString(getString(R.string.fp_nombre), "Usuario")
+        val apellido_email = sharedPref.getString(getString(R.string.fp_apellidos), "Apellido")
 
-        // Ya tengo el valor del nombre guardado en la variable user del fichero de "usuarios.xml"
-        usuario.editText?.setText(user)
+        outlined_usuario.editText?.setText(usuario_email)
+        if(!apellido_email.isNullOrEmpty()){
+            outlined_apellidos.editText?.setText(apellido_email)
+        }
 
         val btn_guardar = view.findViewById(R.id.btn_guardar) as Button
 
-        //si están vacios los campos nada
-        if(user.isNullOrEmpty() || apellidos.isNullOrEmpty()){
+        btn_guardar.setOnClickListener {
+            outlined_usuario.editText?.doOnTextChanged { input_usuario, _, _, _ ->
+                //Respond to input text change
+                nombre = input_usuario.toString()
+            }
+            outlined_apellidos.editText?.doOnTextChanged { input_apellidos, _, _, _ ->
+                //Respond to input text change
+                apellido = input_apellidos.toString()
+            }
 
-        }else{
+            if (!nombre.isNullOrEmpty() || !apellido.isNullOrEmpty()) {
 
+                if (!nombre.isNullOrEmpty()) {
+                    with(sharedPref.edit()) {
+                        putString(getString(R.string.fp_nombre), nombre)
+                        apply()
+                        Toast.makeText(context, "Se ha guardado el nombre!", Toast.LENGTH_LONG)
+                            .show()
+                    }
+                }
+                if (!apellido.isNullOrEmpty()) {
+                    with(sharedPref.edit()) {
+                        putString(getString(R.string.fp_apellidos), apellido)
+                        apply()
+                        Toast.makeText(context, "Se ha guardado el apellido!", Toast.LENGTH_LONG)
+                            .show()
+                    }
+                }
+            }else{
+                Toast.makeText(context, "No se ha podido guardar :(", Toast.LENGTH_LONG)
+                    .show()
+            }
         }
-
-
-        //Devuelve esa vista con la información que ha rescatado
         return view
-
     }
 
     companion object {
@@ -80,13 +113,22 @@ class FragmentPerfil : Fragment() {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            FragmentPerfil().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+        fun newInstance(param1: String, param2: String) = FragmentPerfil().apply {
+            arguments = Bundle().apply {
+                putString(ARG_PARAM1, param1)
+                putString(ARG_PARAM2, param2)
             }
+        }
     }
+
+    protected fun leerStringSharePreferences(
+        archivo: String, clave: String
+    ): String? {
+        //Recuperamos la informacion del archivo de SharePreferences
+        val sharePref = this.context?.getSharedPreferences(archivo, Context.MODE_PRIVATE)
+        // Cargamos un valor desde el fichero de SharePreferences
+        return sharePref?.getString(clave, clave)
+    }
+
 
 }

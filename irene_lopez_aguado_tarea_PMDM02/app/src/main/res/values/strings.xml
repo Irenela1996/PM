@@ -3,7 +3,8 @@
     log_titulo
     <string name="log_titulo">LOGIN</string>
     <!--    Nombre que recibe cada uno de los elementos de la BBDD de SharePrefs   -->
-    <string name="log_usuario">Usuario</string>
+    <string name="log_usuario">Usuarios</string>
+    <string name="log_email">Email</string>
     <string name="log_password">Contraseña</string>
     <string name="log_btn_entrar">Entrar</string>
     <!--    Nombre que recibe la BBDD de SharePrefs    -->

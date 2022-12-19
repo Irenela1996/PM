@@ -16,7 +16,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintHorizontal_bias="0.467"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.044" />
@@ -119,12 +119,12 @@
 
     <TextView
         android:id="@+id/tv_fecha_salida"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="143dp"
+        android:layout_height="31dp"
+        android:enabled="false"
         android:inputType="text|date"
         android:minHeight="48dp"
         android:text="@string/fp_fecha_de_salida"
-        android:enabled="false"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
